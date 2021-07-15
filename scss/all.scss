@@ -1,0 +1,267 @@
+@import "reset";
+
+
+// global var
+$line-color-b: #000000 solid 1px;
+$line-color-w: #FFFFFF solid 1px;
+
+//mixin
+//白色背景
+//線
+@mixin content-w{
+    border-bottom: $line-color-b;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+@mixin content-w-title-ch{
+    font-size: 32px;
+    // line-height: 43px;
+    padding-left: 1px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@mixin content-w-title-eg{
+    margin-left: 16px;
+    font-size: 24px;
+    line-height: 32px;
+    color: #A00404;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@mixin content-w-words{
+    padding-bottom: 24px;
+    font-size: 24px;
+    line-height: 36px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+//藍色背景
+//線
+@mixin content-bl{
+    border-bottom: $line-color-w;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+
+@mixin content-bl-title-ch{
+    font-size: 32px;
+    line-height: 43px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@mixin content-bl-title-eg{
+    margin-left: 16px;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@mixin content-bl-words{
+    // padding-bottom: 8px;
+    // padding-top: 8px;
+    padding-top: 16px;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+    font-family: Roboto, Light;
+}
+
+//格式
+a{
+    text-decoration: none;
+}
+
+// .wrap{
+//     height: 3017px;
+// }
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    
+    h1{
+        // font: 80px/106px;
+        font-size: 80px;
+        line-height: 106px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border-bottom: #000000 solid 2px;
+        padding-top: 37px;
+    }
+
+    .profile{
+        // border-radius: 50%;
+        margin-top: 46px; //48-2
+        padding-bottom: 46px; //48-2
+    }
+
+    .info{
+        padding-bottom: 48px; //72-24(content-w-words{padding-bottom: 24px;) =48
+
+        .tile{
+            @include content-w;
+        }
+        p{
+            display: inline;
+        }
+        .ch{
+            @include content-w-title-ch;
+        }
+        .eg{
+            @include content-w-title-eg;
+        }
+        li{
+            @include content-w-words
+        }
+    }
+
+    .edu{
+        padding-bottom: 48px; //72-24=48
+        .tile{
+            @include content-w;
+        }
+        p{
+            display: inline;
+        }
+        .ch{
+            @include content-w-title-ch;
+        }
+        .eg{
+            @include content-w-title-eg;
+        }
+        li{
+            @include content-w-words
+        }
+    }
+
+    .exp{
+        padding-bottom: 72px;
+        margin-top: 72px;
+        ul{
+            margin-left: 24px;
+            border-left: 1px solid #96A9C4;
+        }
+        .tile{
+            @include content-w;
+        }
+        p{
+            display: inline;
+        }
+        .ch{
+            @include content-w-title-ch;
+        }
+        .eg{
+            @include content-w-title-eg;
+        }
+        li{
+            padding-left: 24px;
+            @include content-w-words
+        }
+        .bottom{
+            padding-bottom: 0;
+        }
+        .intro{
+            width: 642px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .logo{
+            margin: 0;
+            margin-top: -15px;
+            margin-bottom: 8px;
+            // a{
+            //     display: block;
+            // }
+            a:hover{
+                img{
+                    width: 100px;
+                }
+            }
+        }
+        img{
+            margin-bottom: -20px; //-8(字{margin-bottom: 8px})-2-10(字的line-height)
+        }
+    }
+}
+   
+.bc-blue{
+    background-color: #415165;
+    padding-top: 24px;
+    .skill{
+        background-color: #415165;
+        width: 996px;
+        padding-bottom: 36px;
+        .tile{
+            @include content-bl;
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        ul{
+            margin-left: 392px; // 996/2-(24+188)/2
+            border-left: 1px solid #96A9C4;
+        }
+        p{
+            display: inline;
+        }
+        .ch{
+            @include content-bl-title-ch;
+        }
+        .eg{
+            @include content-bl-title-eg;
+        }
+        li{
+            padding-left: 24px;
+            @include content-bl-words;
+        }
+
+        .top{
+            padding-top: 0;
+        }
+        .bottom{
+            padding-bottom: 0;
+        }
+    }
+    
+    .footer{
+        
+        background-color: #415165;
+        text-align: center;
+        .tile{
+            @include content-bl;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        p{
+            display: inline;
+        }
+        .ch{
+            @include content-bl-title-ch;
+        }
+        .eg{
+            @include content-bl-title-eg;
+        }
+        li a{
+            padding-left: 24px;
+            @include content-bl-words;
+        }
+
+        .social{
+            margin-top: 16px;
+            padding-bottom: 26px; //36-8(a的margin-bottom)-2(img原本預留)
+            padding-left: 24px;
+        }
+        a:hover{
+            text-shadow: 4px 3px 4px rgb(245, 226, 59);
+            img{
+                width: 70px;
+            }
+        }
+        
+
+    }
+}
